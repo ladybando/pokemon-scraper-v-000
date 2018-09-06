@@ -3,7 +3,7 @@ class Pokemon
   
   attr_accessor :name, :type, :db, :id, :hp
   
-  def initialize(id:, name:, type:, db:, hp: = 60)
+  def initialize(id:, name:, type:, db:, hp: 60)
     @name = name
     @type = type
     @db = db
