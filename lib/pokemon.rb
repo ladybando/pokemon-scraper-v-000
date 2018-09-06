@@ -9,7 +9,6 @@ class Pokemon
     @name = name
     @type = type
     @db = db
-<<<<<<< HEAD
    end
   
   def self.save(name, type, db)
