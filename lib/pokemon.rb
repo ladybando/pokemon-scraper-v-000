@@ -22,6 +22,7 @@ class Pokemon
     result_set = statement.execute(id)
 
     results = result_set.collect do |pokemon|
+      binding.pry
       pk = Pokemon.new(name: pokemon[1], type:pokemon[2], db: db, id: pokemon[0])
       pk = pokemon[3]
       pk
