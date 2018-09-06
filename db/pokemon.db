@@ -2,6 +2,10 @@ CREATE TABLE pokemon(
 id INTEGER PRIMARY KEY, 
 name TEXT, 
 type TEXT
+<<<<<<< HEAD
 );
 
 ALTER TABLE pokemon ADD COLUMN hp INTEGER;
+=======
+);
+>>>>>>> fa6a272aabba596553ce0b98e2d73468d9036b1f
