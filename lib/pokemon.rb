@@ -18,7 +18,16 @@ class Pokemon
   def self.find(id, db)
    # pokemon = db.execute("SELECT * FROM Pokemon WHERE id = ?", [id]).first
    #   pk = self.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
-      
+     statement = db.prepare("SELECT * FROM pokemon WHERE id = ?")
+    result_set = statement.execute(id)
+
+    results = result_set.collect do |row|
+      pokemon = Pokemon.new(name: row[1], type: row[2], db: db, id: id)
+      pokemon.hp = row[3]
+      pokemon
+    end
+    results[0]
+  end  
   #binding.pry  
   end
   
