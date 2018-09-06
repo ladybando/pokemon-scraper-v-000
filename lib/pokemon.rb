@@ -16,18 +16,10 @@ class Pokemon
   end
   
   def self.find(id, db)
-   # pokemon = db.execute("SELECT * FROM Pokemon WHERE id = ?", [id]).first
-   #   pk = self.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
-     statement = db.prepare("SELECT * FROM pokemon WHERE id = ?")
-    result_set = statement.execute(id)
-
-    results = result_set.collect do |pokemon|
-      binding.pry
-      pk = Pokemon.new(name: pokemon[1], type:pokemon[2], db: db, id: pokemon[0])
-      pk
-    end
-    results[0]
-  end  
+    pokemon = db.execute("SELECT * FROM Pokemon WHERE id = ?", [id]).first
+      pk = self.new(id: pokemon[0], name: pokemon[1], type: pokemon[2], db: db)
+  #binding.pry  
+  end
   
   def alter_hp(new_hp = 60, db)
     db.execute("UPDATE pokemon SET hp = ? WHERE id = ?", new_hp, self.id)
