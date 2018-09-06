@@ -8,4 +8,4 @@ type TEXT
 ALTER TABLE pokemon ADD COLUMN hp INTEGER;
 =======
 );
->>>>>>> fa6a272aabba596553ce0b98e2d73468d9036b1f
+
